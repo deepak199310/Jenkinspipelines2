@@ -1,12 +1,12 @@
-node {
-  
-  stage ("cloning from Git")
-  {
-    git "https://github.com/deepak199310/Jenkinspipelines2.git"
-  }
-  stage ("running sh script")
-  {
-    sh "./hello.sh"
-  }
-  
+node
+{
+stage("Cloning from Git")
+{
+git branch: 'main', url: 'git@github.com:deepak199310/Jenkinspipelines2.git'
+}
+stage("Run a Shell Script")
+{
+sh "chmod 755 hello.sh"
+sh "./hello.sh"
+}
 }
